@@ -3,8 +3,8 @@
 #include <stdlib.h>
 
 void words_add(CFStack *stack)  {
-  const int second = atoi(cf_stack_pop(stack));
-  const int first = atoi(cf_stack_pop(stack));
+  const int second = *(int*) cf_stack_pop(stack);
+  const int first = *(int*) cf_stack_pop(stack);
 
   int *result = malloc(sizeof(int));
   *result = first + second;
@@ -12,8 +12,8 @@ void words_add(CFStack *stack)  {
 }
 
 void words_minus(CFStack *stack)  {
-  const int second = atoi(cf_stack_pop(stack));
-  const int first = atoi(cf_stack_pop(stack));
+  const int second = *(int*) cf_stack_pop(stack);
+  const int first = *(int*) cf_stack_pop(stack);
 
   int *result = malloc(sizeof(int));
   *result = first - second;
@@ -21,8 +21,8 @@ void words_minus(CFStack *stack)  {
 }
 
 void words_multiply(CFStack *stack)  {
-  const int second = atoi(cf_stack_pop(stack));
-  const int first = atoi(cf_stack_pop(stack));
+  const int second = *(int*) cf_stack_pop(stack);
+  const int first = *(int*) cf_stack_pop(stack);
 
   int *result = malloc(sizeof(int));
   *result = first * second;
@@ -30,8 +30,8 @@ void words_multiply(CFStack *stack)  {
 }
 
 void words_divide(CFStack *stack)  {
-  const int second = atoi(cf_stack_pop(stack));
-  const int first = atoi(cf_stack_pop(stack));
+  const int second = *(int*) cf_stack_pop(stack);
+  const int first = *(int*) cf_stack_pop(stack);
 
   int *result = malloc(sizeof(int));
   *result = first / second;
@@ -39,5 +39,5 @@ void words_divide(CFStack *stack)  {
 }
 
 void words_print(CFStack *stack) {
-  printf("%d\n", *((int*) cf_stack_pop(stack)));
+  printf("%d\n", (*(int*) cf_stack_pop(stack)));
 }
