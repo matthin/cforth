@@ -1,8 +1,8 @@
 #include "cforth/stack.h"
 #include <stdlib.h>
 
-void cf_stack_push(struct cf_Stack *stack, void *element) {
-  struct cf_Node *node = malloc(sizeof(struct cf_Node));
+void cf_stack_push(CFStack *stack, void *element) {
+  CFNode *node = malloc(sizeof(CFNode));
   node->data = element;
 
   if (stack->top == NULL) {
@@ -14,7 +14,7 @@ void cf_stack_push(struct cf_Stack *stack, void *element) {
   stack->top = node;
 }
 
-void *cf_stack_pop(struct cf_Stack *stack) {
+void *cf_stack_pop(CFStack *stack) {
   if (stack->top == NULL) {
     return NULL;
   }

@@ -1,13 +1,13 @@
 #pragma once
 
-typedef struct cf_Node {
+typedef struct CFNode {
   void *data;
-  struct cf_Node *next;
-} cf_Node;
+  struct CFNode *next;
+} CFNode;
 
-struct cf_Stack {
-  cf_Node *top;
-};
+typedef struct CFStack {
+  CFNode *top;
+} CFStack;
 
-void cf_stack_push(struct cf_Stack *stack, void *element);
-void *cf_stack_pop(struct cf_Stack *stack);
+void cf_stack_push(CFStack *stack, void *element);
+void *cf_stack_pop(CFStack *stack);
